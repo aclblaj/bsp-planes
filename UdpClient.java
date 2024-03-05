@@ -6,7 +6,6 @@ public class UdpClient {
   public static void main(String[] args) {
     try { 
 	
-	  // InetAddress iaddr = InetAddress.getByName( "10.0.2.15" );
 	  InetAddress iaddr = InetAddress.getLocalHost();
 	
       DatagramPacket dp = new DatagramPacket(new byte[20], 20, iaddr, 55000);
@@ -21,12 +20,7 @@ public class UdpClient {
 		  
 		  ds.receive(dp);
 		  System.out.println(new String(dp.getData()));
-	  }
-	  /*ds.send(dp);
-      ds.receive(dp);
-      System.out.println("S2." + new String(dp.getData()));
-	  */
-	  
+	  }	  
 	  
 	} catch (UnknownHostException e) { e.printStackTrace();}
 	  catch (SocketException e) { e.printStackTrace();}
